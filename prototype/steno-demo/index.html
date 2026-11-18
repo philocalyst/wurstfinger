@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<title>Wurstfinger steno mode</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27%3E%3Crect width=%2716%27 height=%2716%27 rx=%274%27 fill=%27%230a84ff%27/%3E%3C/svg%3E">
+<link rel="preload" href="assets/Nunito.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="stage">
+  <div class="phone-wrap" id="phoneWrap">
+    <div class="phone">
+      <div class="screen" id="screen">
+        <div class="island"></div>
+        <div class="status"><span>9:41</span><span class="right"><span>5G</span><svg width="25" height="12" viewBox="0 0 25 12" fill="none"><rect x=".5" y=".5" width="21" height="11" rx="3.5" stroke="currentColor" opacity=".45"/><rect x="2" y="2" width="16" height="8" rx="2" fill="currentColor"/><rect x="23" y="4" width="1.6" height="4" rx=".8" fill="currentColor" opacity=".45"/></svg></span></div>
+        <div class="app-bar">
+          <div class="who" id="who">Maya</div>
+          <div class="sub" id="whoSub">Messages</div>
+          <div class="app-switch" role="group" aria-label="App">
+            <button id="ctxMessages" aria-pressed="true">Messages</button>
+            <button id="ctxTerminal" aria-pressed="false">Terminal</button>
+          </div>
+        </div>
+        <div class="lesson-card lesson" id="lessonCard" hidden></div>
+        <div class="thread" id="thread"></div>
+        <div class="terminal" id="terminal" hidden></div>
+        <div class="composer">
+          <div class="field" id="field" aria-live="polite"></div>
+          <button class="send" id="send" aria-label="Send" disabled><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 13V3"/><path d="m3.5 7.5 4.5-4.5 4.5 4.5"/></svg></button>
+        </div>
+        <div class="keyboard" id="keyboard">
+          <div class="ribbon" id="ribbon">
+            <div class="pager" id="pager" role="tablist" aria-label="Keyboard mode"></div>
+            <div class="tape" id="tape"></div>
+          </div>
+          <div class="keys" id="keys" data-mode="steno"></div>
+          <div class="overlay" id="overlay"><canvas class="trail" id="trail"></canvas><div class="finger" id="finger"></div></div>
+          <div class="home-bar"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="sheet-open" id="sheetOpen">Learn &amp; set up</button>
+  <aside class="panel">
+    <button class="sheet-close" id="sheetClose" aria-label="Back to the keyboard">Back to the keyboard</button>
+    <h1>Steno mode</h1>
+    <p class="lede">Nine keys in three columns: what starts a syllable, its vowel, what ends it. You write a word by its pieces, as it sounds, with one thumb or with both at once.</p>
+    <div class="tabs" role="tablist" id="tabs">
+      <button role="tab" data-tab="learn" aria-selected="true">Learn</button>
+      <button role="tab" data-tab="lookup" aria-selected="false">Look up</button>
+      <button role="tab" data-tab="packs" aria-selected="false">Dictionaries</button>
+      <button role="tab" data-tab="numbers" aria-selected="false">Numbers</button>
+      <button role="tab" data-tab="settings" aria-selected="false">Settings</button>
+    </div>
+    <section class="pane" id="pane-learn"></section>
+    <section class="pane" id="pane-lookup" hidden></section>
+    <section class="pane" id="pane-packs" hidden></section>
+    <section class="pane" id="pane-numbers" hidden></section>
+    <section class="pane" id="pane-settings" hidden></section>
+  </aside>
+</main>
+<script type="module" src="src/ui/app.js"></script>
+</body>
+</html>

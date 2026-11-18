@@ -1,0 +1,12 @@
+{
+  "name": "wurstfinger-steno-demo",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "corpus": "node tools/corpus.mjs",
+    "theory": "node tools/theory.mjs",
+    "evaluate": "node tools/evaluate.mjs",
+    "test": "node --test test/*.test.mjs",
+    "start": "node serve.mjs"
+  }
+}
